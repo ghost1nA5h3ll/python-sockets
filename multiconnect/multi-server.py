@@ -45,7 +45,7 @@ lsoc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 lsoc.bind(server_config)
 lsoc.listen()
 print('Server is listening on: {}'.format(server_config))
-lsoc.setblocking(false) #configure non-blocking mode 
+lsoc.setblocking(False) #configure non-blocking mode 
 
 #register socket to selectors object -> read event data and save values into data var
 sel.register(lsoc, selectors.EVENT_READ, data=None)
