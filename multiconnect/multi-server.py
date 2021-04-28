@@ -30,7 +30,7 @@ def handle_connection(key, mask):
     if mask & selectors.EVENT_WRITE:
         if data.outb:
             print('<echoing> {} to {}'.format(repr(data.outb), data.addr))
-            sent = sock.send(data.outb)
+            sent = soc.send(data.outb)
             data.outb = data.outb[sent:] #remove the already send data from the "buffer"
 
 
